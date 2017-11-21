@@ -25,49 +25,67 @@
 
 	<dependencies>
 		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>  
-    	<groupId>org.webjars</groupId>  
-    	<artifactId>jquery</artifactId>  
-    	<version>3.1.1</version>  
-		</dependency>
-		 <dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-thymeleaf</artifactId>
-    	</dependency>
-    	
-    <dependency>  
-    	<groupId>org.webjars</groupId>  
-   	 	<artifactId>bootstrap</artifactId>  
-    	<version>3.3.7-1</version> 
-    </dependency>
-    <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-    <dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.5.0</version>
-		</dependency> 
+			<dependency><!-- 启动 Feign  支持 -->
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-feign</artifactId>
+			</dependency>
+			<dependency><!-- 启动 eureka  支持 -->
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-eureka</artifactId>
+			</dependency>
+	
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+			<dependency>  <!-- 启动 前端支持 ，一些常见的前端 插件的添加等 -->
+		    	<groupId>org.webjars</groupId>  
+		    	<artifactId>jquery</artifactId>  
+		    	<version>3.1.1</version>  
+			</dependency>
+			 <dependency><!-- 启动 页面支持，采用  thymeleaf 页面等 -->
+	    		<groupId>org.springframework.boot</groupId>
+	    		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	    	</dependency>
+	    	
+		    <dependency> <!-- 启动 前端框架  bootstrap--> 
+		    	<groupId>org.webjars</groupId>  
+		   	 	<artifactId>bootstrap</artifactId>  
+		    	<version>3.3.7-1</version> 
+		    </dependency>
+		    <dependency><!-- 启动 web--> 
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-web</artifactId>
+				</dependency>
+		    <dependency><!-- 启动 swagger2-->  
+					<groupId>io.springfox</groupId>
+					<artifactId>springfox-swagger2</artifactId>
+					<version>2.5.0</version>
+			</dependency>
+			<dependency> <!-- 启动 swagger2 ui -->  
+					<groupId>io.springfox</groupId>
+					<artifactId>springfox-swagger-ui</artifactId>
+					<version>2.5.0</version>
+			</dependency> 
+			
+			<!--<dependency>   
+			    <groupId>org.springframework.boot</groupId>  
+			    <artifactId>spring-boot-starter-data-jpa</artifactId>  
+			</dependency>  启动 数据库的连接 -->  
+			<!-- Json包 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.16</version>
+            </dependency>
+           <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
+			 <!-- 添加oracle jdbc driver 
+		    <dependency>    
+		        <groupId>com.oracle</groupId>    
+		        <artifactId>ojdbc14</artifactId>    
+		        <version>10.2.0.2.0</version>
+		    </dependency>-->  
 	</dependencies>
 
 	<dependencyManagement>

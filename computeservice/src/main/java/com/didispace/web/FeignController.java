@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.didispace.service.ComputeClient;
 @RestController
 public class FeignController {
-	 @Autowired
-	    ComputeClient computeClient; 
+	 	@Autowired
+	   ComputeClient computeClient; 
 
-	    @RequestMapping(value = "/addFeign", method = RequestMethod.GET)
-	    public Integer addFeign() {
-	        return computeClient.addFeign(10, 20);
-	    }
+	  @RequestMapping(value = "/addFeign", method = RequestMethod.GET)
+	   public Integer addFeign() {
+	       return computeClient.addFeign(10, 20);
+	   }
 }
