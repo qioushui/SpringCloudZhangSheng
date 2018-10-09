@@ -1,4 +1,4 @@
-package com.didispace.entity;
+package com.zhangsheng.didispace.entity;
 
 /**
  *
