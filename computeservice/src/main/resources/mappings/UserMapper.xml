@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangsheng.userinfo.dao.IUserInfoMapper"> 
+  <select id="findUserInfo" resultType="com.zhangsheng.userinfo.entity.UserInfo">   
+   select id,name  from user_info  </select>  
+  <insert id="addUserInfo" parameterType="com.zhangsheng.userinfo.entity.UserInfo"> 
+   	insert into user_info (id, name )  
+   	  values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR} ) 
+ </insert> 
+ 
+  <delete id="delUserInfo" parameterType="java.lang.Integer">  
+   delete from user_info where id = #{id,jdbcType=INTEGER}  
+   </delete> 
+</mapper>
