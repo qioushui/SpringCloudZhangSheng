@@ -2,6 +2,8 @@ package com.zhangsheng.userinfo.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +18,8 @@ public class UserInfoController {
 	private IUserInfoService iUserInfoService;
 
 	@RequestMapping("/getUserInfo")
-	public List<UserInfo> getUserInfo() {
+	public List<UserInfo> getUserInfo(HttpSession httpSession) {
+		httpSession.setAttribute("user","zuli");
 		List<UserInfo> user = iUserInfoService.getUserInfo();
 		System.out.println(user.toString());
 		return user;

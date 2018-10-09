@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 
 /*注解，该注解能激活Eureka中的DiscoveryClient实现，
 才能实现Controller中对服务信息的输出。(允许服务被发现，被调用)
@@ -26,6 +30,7 @@ Fengn 实现的声明式服务调用客户端
 //启动swagger注解启动该注解使得用在controller中的swagger注解生效，覆盖的范围由@ComponentScan的配置来指定，这里默认指定为根路径"com.didispace"下的所有controller  
 @EnableDiscoveryClient
 @EnableFeignClients //注解开启Feign功能   在应用主类中通过@EnableFeignClients注解开启Feign功能
+@EnableJdbcHttpSession//开启 springsession的数据库的存储
 public class ComputeServiceApplication {
 	@Autowired
     DataSource dataSource;
@@ -70,4 +75,12 @@ public class ComputeServiceApplication {
     }  
 */      
 
+	@Bean
+    public TaskScheduler taskScheduler(){
+
+        return new ThreadPoolTaskScheduler();
+
+	}
+	
+	
 }
