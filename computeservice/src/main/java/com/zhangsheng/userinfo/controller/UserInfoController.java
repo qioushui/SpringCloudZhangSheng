@@ -19,6 +19,7 @@ public class UserInfoController {
 
 	@RequestMapping("/getUserInfo")
 	public List<UserInfo> getUserInfo(HttpSession httpSession) {
+		//创建session 的时候，添加！（建议用监听去添加，和注销session）
 		httpSession.setAttribute("user","zuli");
 		List<UserInfo> user = iUserInfoService.getUserInfo();
 		System.out.println(user.toString());
