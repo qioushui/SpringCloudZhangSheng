@@ -1,5 +1,7 @@
 package com.zhangsheng.didispace.entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author zhangsheng
@@ -14,14 +16,18 @@ package com.zhangsheng.didispace.entity;
 
 导致bean无法注入，加一下就行了。和表对应就写@Entity，不对应就写@Component。
 */
-public class User {
-
+//注意一定要序列化
+public class User implements Serializable{
+	private static final long serialVersionUID = -1L;
     private Long id;
     private String name;
     private Integer age;
 
-    public User(String string, int i) {
+    public User(Long id,String name, int age) {
 		// TODO Auto-generated constructor stub
+    	this.name = name;
+        this.age = age;
+        this.id=id;
 	}
     public User() {
 		// TODO Auto-generated constructor stub

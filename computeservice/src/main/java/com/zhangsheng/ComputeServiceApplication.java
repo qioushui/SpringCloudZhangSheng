@@ -70,6 +70,12 @@ public class ComputeServiceApplication {
         //3.在convert中添加配置信息  
         fastConverter.setFastJsonConfig(fastJsonConfig);  
         //4.将convert添加到converters中  
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
         converters.add(fastConverter);  
           
     }  

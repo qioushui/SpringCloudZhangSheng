@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zhangsheng.userinfo.entity.UserInfo;
 import com.zhangsheng.userinfo.service.IUserInfoService;
-
+/* 
+ * 此java类是测试连接数据库mysql的联系的
+ * zhangsheng
+ * 
+ * 
+ * */
 @RestController
 @RequestMapping("/userInfo")
 public class UserInfoController {

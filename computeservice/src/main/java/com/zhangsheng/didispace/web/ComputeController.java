@@ -20,6 +20,8 @@ public class ComputeController {
     private DiscoveryClient client;  //服务的 注册的 ip 服务名 地址 等信息  的查看（Eureka 的实例对象）
    /* @Autowired  
     private Userservice sinotransOrgRepository;  */
+   
+    //此方法是提供给负载均衡，调用的方法
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();

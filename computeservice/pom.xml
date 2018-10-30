@@ -6,7 +6,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<groupId>com.zhangsheng</groupId>
 	<artifactId>computeservice</artifactId>
-	<version>3.0.0</version>
+	<version>4.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>computeservice</name>
@@ -19,12 +19,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-
-	<dependencies>
+	<dependencies>	
+		<!-- 注意版本问题，导致引入报错 -->
+	<dependency>  
+    	<groupId>org.springframework.boot</groupId>  
+    	<artifactId>spring-boot-starter-data-redis</artifactId>  
+	</dependency> 
+		
 		<!-- 启动 如何将session持久化到数据库  支持 -->
 		<dependency>
 
@@ -106,8 +107,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <artifactId>druid</artifactId>            
         <version>1.0.29</version>        
         </dependency>
-
-        
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<!-- 增加feign-httpclient -->
+	 <dependency>
+	     <groupId>io.github.openfeign</groupId>
+	     <artifactId>feign-httpclient</artifactId>
+	  </dependency>
+		
 	</dependencies>
 
 	<dependencyManagement>
